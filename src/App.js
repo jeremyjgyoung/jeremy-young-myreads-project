@@ -21,23 +21,17 @@ class BooksApp extends Component {
     alert(this.state.value)
   }
 
-  // handleChange = (event) => {
-  //   this.setState({value: event.target.value})
-  //   alert('The new shelf is: ' + this.state.value)
-  // }
-
   render() {
     return (
-        <div className="app">
-          <Route exact path='/' render={() => (
-              <ListBooks
-                books={this.state.books}
-                onshelfChange = {this.shelfChange}
-                // onHandleChange={this.handleChange}
-              />
-            )}/>
-          <Route path="/search" component={SearchBooks}/>
-        </div>
+      <div className="app">
+        <Route exact path='/' render={() => (
+          <ListBooks
+            books={this.state.books}
+            onshelfChange = {this.shelfChange}
+          />
+        )}/>
+        <Route path="/search" component={SearchBooks}/>
+      </div>
     )
   }
 }
