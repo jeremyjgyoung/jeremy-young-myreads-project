@@ -16,12 +16,14 @@ class BooksApp extends Component {
     })
   }
 
-  shelfChange = (book) => {
+  shelfChange = (book, event) => {
+    BooksAPI.update(book, event.target.value).then(response => console.log(response))
     // Trying to setState, but book.shelf causes an error
-    // this.setState({book.shelf: book.target.value})
+    // this.setState({book.bookshelf: event.target.value})
     // Or Maybe set the new state using update?
     // BooksAPI.update(book, book.shelf)
-    alert(book.target.value)
+    // alert(event.target.value)
+    // BooksAPI.update(book, event.target.value)
   }
 
   render() {
@@ -30,7 +32,7 @@ class BooksApp extends Component {
         <Route exact path='/' render={() => (
           <ListBooks
             books={this.state.books}
-            onshelfChange = {this.shelfChange}
+            onshelfChange={this.shelfChange}
           />
         )}/>
         <Route path="/search" component={SearchBooks}/>
