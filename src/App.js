@@ -19,6 +19,8 @@ class BooksApp extends Component {
   shelfChange = (book) => {
     // Trying to setState, but book.shelf causes an error
     // this.setState({book.shelf: book.target.value})
+    // Or Maybe set the new state using update?
+    // BooksAPI.update(book, book.shelf)
     alert(book.target.value)
   }
 
