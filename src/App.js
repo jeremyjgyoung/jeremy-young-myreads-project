@@ -16,9 +16,10 @@ class BooksApp extends Component {
     })
   }
 
-  shelfChange = (event) => {
-    this.setState({value: event.target.value})
-    alert(this.state.value)
+  shelfChange = (book) => {
+    // Trying to setState, but book.shelf causes an error
+    // this.setState({book.shelf: book.target.value})
+    alert(book.target.value)
   }
 
   render() {
