@@ -6,7 +6,7 @@ import PropTypes from 'prop-types'
 class ListBooks extends Component {
   static propTypes = {
     books: PropTypes.array.isRequired,
-    onshelfChange: PropTypes.func.isRequired
+    onShelfChange: PropTypes.func.isRequired
   }
 
   render() {
@@ -27,7 +27,7 @@ class ListBooks extends Component {
                         <div className="book-top">
                           <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${book.imageLinks.thumbnail})` }}></div>
                           <div className="book-shelf-changer">
-                            <select value={book.bookshelf} onChange={(event) => this.props.onshelfChange(book, event)}>
+                            <select value={book.shelf} onChange={(event) => this.props.onShelfChange(book, event)}>
                               <option value="none" disabled>Move to...</option>
                               <option value="currentlyReading">Currently Reading</option>
                               <option value="wantToRead">Want to Read</option>
@@ -54,7 +54,7 @@ class ListBooks extends Component {
                         <div className="book-top">
                           <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${book.imageLinks.thumbnail})` }}></div>
                           <div className="book-shelf-changer">
-                            <select>
+                            <select value={book.shelf} onChange={(event) => this.props.onShelfChange(book, event)}>
                               <option value="none" disabled>Move to...</option>
                               <option value="currentlyReading">Currently Reading</option>
                               <option value="wantToRead">Want to Read</option>
@@ -81,7 +81,7 @@ class ListBooks extends Component {
                         <div className="book-top">
                           <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${book.imageLinks.thumbnail})` }}></div>
                           <div className="book-shelf-changer">
-                            <select>
+                            <select value={book.shelf} onChange={(event) => this.props.onShelfChange(book, event)}>
                               <option value="none" disabled>Move to...</option>
                               <option value="currentlyReading">Currently Reading</option>
                               <option value="wantToRead">Want to Read</option>
