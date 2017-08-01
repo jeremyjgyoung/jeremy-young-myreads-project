@@ -58,7 +58,6 @@ class SearchBooks extends Component {
             ))}
           </ol>
         </div>
-        <div>You are searching for {this.state.query}</div>
       </div>
     )
   }
