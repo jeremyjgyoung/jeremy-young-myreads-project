@@ -24,11 +24,6 @@ class BooksApp extends Component {
     })
   }
 
-  // searchBooks = (query) => {
-  //   this.setState({ query: query.trim() })
-  //   BooksAPI.search(query, 20).then(res => console.log(res))
-  // }
-
   render() {
     return (
       <div className="app">
@@ -41,7 +36,6 @@ class BooksApp extends Component {
         <Route path='/search' render={() => (
           <SearchBooks
             books={this.state.books}
-            // onSearchBooks={this.searchBooks}
           />
         )}/>
       </div>
