@@ -14,6 +14,7 @@ There are three main files to check out: App.js, ListBooks.js, and SearchBooks.j
  |-- App.js - This is the root of the app.
  |-- ListBooks.js - This includes code for listing books in separate shelves.
  |-- SearchBooks.js - This includes code for searching for new books to add.
+ ```
 
 ## A Note on Search Results
 The backend API uses a fixed set of cached search results and is limited to a particular set of search terms, which can be found in [SEARCH_TERMS.md](SEARCH_TERMS.md). That list of terms are the _only_ terms that will work with the backend, so don't be surprised if your searches for Basket Weaving or Bubble Wrap don't come back with any results.
