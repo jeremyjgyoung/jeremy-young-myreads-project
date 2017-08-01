@@ -1,7 +1,8 @@
 This is Jeremy's my reads project for Udacity's React Fundamentals course.
 
 ## Installing & Starting Project
-* Clone [Jeremy's project](https://github.com/jeremyjgyoung/jeremy-young-myreads-project).
+* Clone [Jeremy's project](https://github.com/jeremyjgyoung/jeremy-young-myreads-project) by using `git clone git@github.com:jeremyjgyoung/jeremy-young-myreads-project.git` on your command line.
+* Step into the project with `cd jeremy-young-myreads-project` in command line.
 * Install dependencies by typing `npm install` into command line.
 * Start a local server by typing `npm start` or
 `yarn start` into command line.
