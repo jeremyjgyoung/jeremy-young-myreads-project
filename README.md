@@ -1,11 +1,12 @@
 This is Jeremy's my reads project for Udacity's React Fundamentals course.
 
 ## Installing & Starting Project
-* Clone [Jeremy's Project](https://github.com/jeremyjgyoung/jeremy-young-myreads-project).
+* Clone [Jeremy's project](https://github.com/jeremyjgyoung/jeremy-young-myreads-project).
 * Install dependencies by typing `npm install` into command line.
-* Start a local server by typing `npm start` into command line.
+* Start a local server by typing `npm start` or
+`yarn start` into command line.
 * Navigate to [your local server](http://localhost:3000/), which by default should be http://localhost:3000/.
-* You must have node package manager installed on your machine for the `npm` keyword to work in your command line.
+* You must have [npm](https://www.npmjs.com/get-npm) and [yarn](https://yarnpkg.com/lang/en/docs/install/) installed on your machine for the `npm` or `yarn` keyword to work in your command line, respectively.
 
 ## Files
 There are three main files to check out: App.js, ListBooks.js, and SearchBooks.js.
