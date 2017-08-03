@@ -5,8 +5,8 @@ import PropTypes from 'prop-types'
 import * as BooksAPI from './BooksAPI'
 
 class SearchBooks extends Component {
-  /* The prop passed is the onShelfChange method to this class,
-  so we can change the shelves when  */
+  /* The prop passed is the
+  onShelfChange method to this class so we can change the shelves  */
   static propTypes = {
     onShelfChange: PropTypes.func.isRequired
   }
