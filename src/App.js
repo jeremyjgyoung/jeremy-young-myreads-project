@@ -11,14 +11,14 @@ class BooksApp extends Component {
     books: []
   }
 
-  // When the app starts we will fill our array of books with object
+  // This fills the array of books
   componentDidMount() {
     BooksAPI.getAll().then((books) => {
       this.setState({ books })
     })
   }
 
-  // The shelfChange method allows us to change the shelf property on a specific book
+  // shelfChange method allows a dropdown to change the shelf property on a specific book
   shelfChange = (book, event) => {
     BooksAPI.update(book, event.target.value).then((book) => {
       BooksAPI.getAll().then((books) => {
@@ -29,7 +29,7 @@ class BooksApp extends Component {
 
   render() {
     return (
-      // Rendering our view of three shelves of books from our ListView
+      // Rendering the view of three shelves of books from our ListView
       <div className="app">
         <Route exact path='/' render={() => (
           <ListBooks
@@ -37,7 +37,7 @@ class BooksApp extends Component {
             onShelfChange={this.shelfChange}
           />
         )}/>
-        {/* Rendering our view of search from SearchBooks */}
+        {/* Rendering the view of search from SearchBooks */}
         <Route path='/search' render={() => (
           <SearchBooks
             onShelfChange={this.shelfChange}

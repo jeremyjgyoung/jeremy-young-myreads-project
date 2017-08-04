@@ -6,21 +6,21 @@ import * as BooksAPI from './BooksAPI'
 
 class SearchBooks extends Component {
   /* The prop passed is the
-  onShelfChange method to this class so we can change the shelves  */
+  onShelfChange method to this class to change shelves  */
   static propTypes = {
     onShelfChange: PropTypes.func.isRequired
   }
 
-  /* Initializing query as an empty string
-  and searchResults as an empty array */
+  /* Initializing query as an empty string and
+  searchResults as an empty array */
   state = {
     query: '',
     searchResults: []
   }
 
   /* searchBooks is called when there is a change to the input bar to change
-   the query to what has been input and
-   the searchResults to the array returned from BooksAPI  */
+  the query to what has been input and
+  the searchResults to the array returned from BooksAPI  */
   searchBooks = (query) => {
     this.setState({ query: query.trim() })
     BooksAPI.search(query.trim(), 20).then(bookArray => {
@@ -47,7 +47,7 @@ class SearchBooks extends Component {
             />
           </div>
         </div>
-        // This renders the book UI, which includes book images, titles, and authors
+        {/* This renders the book UI, which includes book images, titles, and authors */}
         <div className="search-books-results">
           <ol className="books-grid">
             {console.log(this.state.searchResults)}
