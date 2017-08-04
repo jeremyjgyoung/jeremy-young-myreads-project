@@ -37,7 +37,7 @@ class BooksApp extends Component {
             onShelfChange={this.shelfChange}
           />
         )}/>
-        // Rendering our view of search from SearchBooks
+        {/* Rendering our view of search from SearchBooks */}
         <Route path='/search' render={() => (
           <SearchBooks
             onShelfChange={this.shelfChange}

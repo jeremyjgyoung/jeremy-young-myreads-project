@@ -20,7 +20,7 @@ class ListBooks extends Component {
         </div>
         <div className="list-books-content">
           <div>
-            // This renders the Currently Reading book shelf
+            {/* This renders the Currently Reading book shelf */}
             <div className="bookshelf">
               <h2 className="bookshelf-title">Currently Reading</h2>
               <div className="bookshelf-books">
@@ -48,7 +48,7 @@ class ListBooks extends Component {
                 </ol>
               </div>
             </div>
-            // This renders the Want to Read book shelf
+            {/* This renders the Want to Read book shelf */}
             <div className="bookshelf">
               <h2 className="bookshelf-title">Want to Read</h2>
               <div className="bookshelf-books">
@@ -76,7 +76,7 @@ class ListBooks extends Component {
                 </ol>
               </div>
             </div>
-            // This renders the Read book shelf
+            {/* This renders the Read book shelf */}
             <div className="bookshelf">
               <h2 className="bookshelf-title">Read</h2>
               <div className="bookshelf-books">
@@ -106,7 +106,7 @@ class ListBooks extends Component {
             </div>
           </div>
         </div>
-        // This navigates to the search view rendered by SearchBooks.js
+        {/* This navigates to the search view rendered by SearchBooks.js */}
         <div className="open-search">
           <Link to="/search">Add a book</Link>
         </div>
