@@ -50,7 +50,6 @@ class SearchBooks extends Component {
         {/* This renders the book UI, which includes book images, titles, and authors */}
         <div className="search-books-results">
           <ol className="books-grid">
-            {console.log(this.state.searchResults)}
             {this.state.searchResults.map((book) => (
               <li key={book.id}>
                 <div className="book">
