@@ -11,7 +11,7 @@ class ListBooks extends Component {
     books: PropTypes.array.isRequired,
     onShelfChange: PropTypes.func.isRequired
   }
-  
+
   render() {
     return (
       <div className="list-books">
