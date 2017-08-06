@@ -26,22 +26,17 @@ class SearchBooks extends Component {
         this.setState({ searchResults: [] })
         return
       }
+
       bookArray.map((b) => {
         this.props.books.map((pb) => {
+          b.shelf="currentlyReading"
           if (b.id===pb.id){
-            console.log('match')
-            console.log(pb.shelf)
-            if (pb.shelf==="currentlyReading") {
-              console.log("currentlyReadinggg")
-            } else if (pb.shelf==="read") {
-              console.log("reeeeead")
-            } else if (pb.shelf==="wantToRead") {
-              console.log("wantToReaddddd")
-            } else {
-              console.log("elseeee")
-            }
+            //seems like the logic is working
+            //console.log(match)
+            //but this isn't working...
+            b.shelf=pb.shelf
           } else {
-            b.shelf='none'
+            b.shelf="none"
           }
         })
       })
