@@ -8,6 +8,7 @@ class SearchBooks extends Component {
   /* The prop passed is the
   onShelfChange method to this class to change shelves  */
   static propTypes = {
+    books: PropTypes.array.isRequired,
     onShelfChange: PropTypes.func.isRequired
   }
 
@@ -18,9 +19,6 @@ class SearchBooks extends Component {
     searchResults: []
   }
 
-  /* searchBooks is called when there is a change to the input bar to change
-  the query to what has been input and
-  the searchResults to the array returned from BooksAPI  */
   searchBooks = (query) => {
     this.setState({ query: query.trim() })
     BooksAPI.search(query.trim(), 20).then(bookArray => {
@@ -28,6 +26,25 @@ class SearchBooks extends Component {
         this.setState({ searchResults: [] })
         return
       }
+      bookArray.map((b) => {
+        this.props.books.map((pb) => {
+          if (b.id===pb.id){
+            console.log('match')
+            console.log(pb.shelf)
+            if (pb.shelf==="currentlyReading") {
+              console.log("currentlyReadinggg")
+            } else if (pb.shelf==="read") {
+              console.log("reeeeead")
+            } else if (pb.shelf==="wantToRead") {
+              console.log("wantToReaddddd")
+            } else {
+              console.log("elseeee")
+            }
+          } else {
+            b.shelf='none'
+          }
+        })
+      })
       this.setState({ searchResults: bookArray })
     })
   }

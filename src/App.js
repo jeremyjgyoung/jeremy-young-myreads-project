@@ -20,25 +20,12 @@ class BooksApp extends Component {
 
   // shelfChange method allows a dropdown to change the shelf property on a specific book
   shelfChange = (book, event) => {
-    console.log(event.target.value)
       BooksAPI.update(book, event.target.value).then((book) => {
         BooksAPI.getAll().then((books) => {
           this.setState({ books })
         })
       })
   }
-
-  // // shelfChange method allows a dropdown to change the shelf property on a specific book
-  // shelfChange = (book, event) => {
-  //   if (book.shelf !== event.target.value) {
-  //     BooksAPI.update(book, shelf).then(() => {
-  //       book.shelf = shelf
-  //       this.setState(state => ({
-  //         books: state.books.filter(b => b.id !== book.id).concat([ book ])
-  //       }))
-  //     })
-  //   }
-  // }
 
   render() {
     return (
@@ -53,6 +40,7 @@ class BooksApp extends Component {
         {/* Rendering the view of search from SearchBooks */}
         <Route path='/search' render={() => (
           <SearchBooks
+            books={this.state.books}
             onShelfChange={this.shelfChange}
           />
         )}/>
