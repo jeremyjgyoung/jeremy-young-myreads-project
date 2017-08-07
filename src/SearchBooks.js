@@ -5,14 +5,14 @@ import PropTypes from 'prop-types'
 import * as BooksAPI from './BooksAPI'
 
 class SearchBooks extends Component {
-  /* The prop passed is the
-  onShelfChange method to this class to change shelves  */
+  /* props passed are the
+  books array and onShelfChange method  */
   static propTypes = {
     books: PropTypes.array.isRequired,
     onShelfChange: PropTypes.func.isRequired
   }
 
-  /* Initializing query as an empty string and
+  /* Initializes query as an empty string and
   searchResults as an empty array */
   state = {
     query: '',
@@ -20,7 +20,7 @@ class SearchBooks extends Component {
   }
 
   /* Sets the state of query and searchResults
-  Sets the correct shelf */
+  including the correct shelf */
   searchBooks = (query) => {
     this.setState({ query: query.trim() })
     BooksAPI.search(query.trim(), 20).then((results) => {

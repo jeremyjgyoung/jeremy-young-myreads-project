@@ -6,12 +6,12 @@ import './App.css'
 import { Route } from 'react-router-dom'
 
 class BooksApp extends Component {
-  //Initializing the books array
+  // Initializes the books array
   state = {
     books: []
   }
 
-  // This fills the array of books
+  // Fills the books array
   componentDidMount() {
     BooksAPI.getAll().then((books) => {
       this.setState({ books })
@@ -33,7 +33,7 @@ class BooksApp extends Component {
 
   render() {
     return (
-      // Rendering the view of three shelves of books from our ListView
+      // Renders the view of three shelves of books from our ListView
       <div className="app">
         <Route exact path='/' render={() => (
           <ListBooks
@@ -41,7 +41,7 @@ class BooksApp extends Component {
             onShelfChange={this.shelfChange}
           />
         )}/>
-        {/* Rendering the view of search from SearchBooks */}
+        {/* Renders the view of search from SearchBooks */}
         <Route path='/search' render={() => (
           <SearchBooks
             books={this.state.books}

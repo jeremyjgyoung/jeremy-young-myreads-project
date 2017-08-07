@@ -4,9 +4,8 @@ import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 
 class ListBooks extends Component {
-  /* The props passed is the
-  onShelfChange method to this class so we can change the shelves and
-  the books array, so we can render a UI using this data  */
+  /* props passed are the
+  books array and onShelfChange method  */
   static propTypes = {
     books: PropTypes.array.isRequired,
     onShelfChange: PropTypes.func.isRequired
