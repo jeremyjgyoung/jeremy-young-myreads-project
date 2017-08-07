@@ -20,11 +20,15 @@ class BooksApp extends Component {
 
   // shelfChange method allows a dropdown to change the shelf property on a specific book
   shelfChange = (book, event) => {
-      BooksAPI.update(book, event.target.value).then((book) => {
-        BooksAPI.getAll().then((books) => {
-          this.setState({ books })
-        })
+    var shelf = event.target.value
+    if (book.shelf !== shelf) {
+      BooksAPI.update(book, shelf).then(() => {
+        book.shelf = shelf
+        this.setState(state => ({
+          books: state.books.filter(b => b.id !== book.id).concat([ book ])
+        }))
       })
+    }
   }
 
   render() {

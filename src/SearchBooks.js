@@ -19,29 +19,19 @@ class SearchBooks extends Component {
     searchResults: []
   }
 
+  updateResults = (searchResults) => {
+    const booksInLibrary = this.props.books.map(b => b.id)
+    searchResults.forEach(book => {
+      booksInLibrary.includes(book.id) && (
+        book.shelf = this.props.books.filter(b => b.id === book.id)[0].shelf
+      )
+    })
+    this.setState({searchResults: searchResults})
+  }
+
   searchBooks = (query) => {
     this.setState({ query: query.trim() })
-    BooksAPI.search(query.trim(), 20).then(bookArray => {
-      if (!bookArray || bookArray.error) {
-        this.setState({ searchResults: [] })
-        return
-      }
-
-      bookArray.map((b) => {
-        this.props.books.map((pb) => {
-          b.shelf="currentlyReading"
-          if (b.id===pb.id){
-            //seems like the logic is working
-            //console.log(match)
-            //but this isn't working...
-            b.shelf=pb.shelf
-          } else {
-            b.shelf="none"
-          }
-        })
-      })
-      this.setState({ searchResults: bookArray })
-    })
+    BooksAPI.search(query.trim(), 20).then(this.updateResults)
   }
 
   render() {
