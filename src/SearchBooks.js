@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import './App.css'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
@@ -19,19 +19,19 @@ class SearchBooks extends Component {
     searchResults: []
   }
 
-  updateResults = (searchResults) => {
-    const booksInLibrary = this.props.books.map(b => b.id)
-    searchResults.forEach(book => {
-      booksInLibrary.includes(book.id) && (
-        book.shelf = this.props.books.filter(b => b.id === book.id)[0].shelf
-      )
-    })
-    this.setState({searchResults: searchResults})
-  }
-
+  /* Sets the state of query and searchResults
+  Sets the correct shelf */
   searchBooks = (query) => {
     this.setState({ query: query.trim() })
-    BooksAPI.search(query.trim(), 20).then(this.updateResults)
+    BooksAPI.search(query.trim(), 20).then((results) => {
+      const booksInList = this.props.books.map(b => b.id)
+      results.forEach(book => {
+        booksInList.includes(book.id) && (
+          book.shelf = this.props.books.filter(b => b.id === book.id)[0].shelf
+        )
+      })
+      this.setState({searchResults: results})
+    })
   }
 
   render() {
